@@ -34,8 +34,8 @@ public class settingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_setting);
         btn = findViewById(R.id.testBtn);
         btn.setOnClickListener(v -> {
-            float pitchFloat = (float) pitchBar.getProgress() / 100;
-            float speedFloat = (float) SpeedRate.getProgress() / 100;
+            float pitchFloat = (float) pitchBar.getProgress() / 50;
+            float speedFloat = (float) SpeedRate.getProgress() / 50;
             Data.pitch = pitchFloat;
             Data.speed = speedFloat;
             engine.setPitch(pitchFloat);
