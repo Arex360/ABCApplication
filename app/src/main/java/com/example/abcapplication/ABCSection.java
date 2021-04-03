@@ -8,6 +8,9 @@ import android.speech.tts.TextToSpeech;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
+import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.util.Locale;
 
 public class ABCSection extends AppCompatActivity {
@@ -24,21 +27,27 @@ public class ABCSection extends AppCompatActivity {
     private Options correctOption;
     private Options choosedOption;
     private  mode gameMode;
+    private ExtendedFloatingActionButton extendedFloatingActionButton;
+    private FloatingActionButton floatingActionButton;
+    private boolean isDefault;
     private void nextQuestion(){
 
     }
-
+    private void Init(){
+        animation = AnimationUtils.loadAnimation(this,R.anim.anim_1);
+        gameMode = mode.defaultMode;
+        isDefault = true;
+        getWindow().setFlags(1024,1024);
+    }
     private void speak(String s){
-        tts.setPitch(1);
-        tts.setSpeechRate(1);
+        tts.setPitch(Data.pitch);
+        tts.setSpeechRate(Data.speed);
         tts.speak(s,TextToSpeech.QUEUE_FLUSH,null);
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        animation = AnimationUtils.loadAnimation(this,R.anim.anim_1);
-        gameMode = mode.defaultMode;
 
-        getWindow().setFlags(1024,1024);
+        Init();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_a_b_c_section);
 
@@ -70,6 +79,8 @@ public class ABCSection extends AppCompatActivity {
         X = findViewById(R.id.c_X);
         Y = findViewById(R.id.c_Y);
         Z = findViewById(R.id.c_Z);
+        floatingActionButton = findViewById(R.id.f_switch);
+        extendedFloatingActionButton = findViewById(R.id.f_state);
         Animate();
         tts = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
             @Override
@@ -423,7 +434,14 @@ public class ABCSection extends AppCompatActivity {
                 }
             }
         });
-
+         floatingActionButton.setOnClickListener(v -> {
+             isDefault = !isDefault;
+             if(isDefault){
+                 extendedFloatingActionButton.setText("Quiz mode");
+             }else{
+                 extendedFloatingActionButton.setText("Default mode");
+             }
+         });
 
 
 

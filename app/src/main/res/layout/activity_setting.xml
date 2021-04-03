@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_Main"
+    android:backgroundTint="#FF9800"
+    tools:context=".settingActivity">
+
+    <LinearLayout
+        android:id="@+id/navbar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/settings" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:text="Settings"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:textStyle="bold"
+
+            />
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/navbar2"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="10dp">
+
+        <LinearLayout
+            android:id="@+id/s_pitch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Pitch"
+
+                android:textColor="@color/background_Main"
+                android:textSize="30dp"
+                android:textStyle="bold"
+
+                />
+
+            <SeekBar
+                android:id="@+id/pitch"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:backgroundTint="@color/background_Main"
+                android:max="100"
+                android:min="0"
+                android:progressBackgroundTint="@color/background_Main"
+                android:thumbTint="@color/background_Main" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/s_speed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="100dp"
+
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Pitch"
+                android:textColor="@color/background_Main"
+                android:textSize="30dp"
+                android:textStyle="bold"
+
+                />
+
+            <SeekBar
+                android:layout_width="180dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:min="0"
+                android:id="@+id/speed"
+                android:max="100"
+                android:backgroundTint="@color/background_Main"
+                android:progressBackgroundTint="@color/background_Main"
+                android:layout_height="wrap_content"
+                android:thumbTint="@color/background_Main"
+                />
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+
+            android:layout_height="wrap_content">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/testBtn"
+                android:backgroundTint="@color/background_Main"
+                android:text="Test"
+                android:textStyle="bold"
+
+                >
+
+            </Button>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

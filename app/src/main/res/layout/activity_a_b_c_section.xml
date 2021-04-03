@@ -285,7 +285,15 @@
                         android:layout_width="25dp"
                         android:layout_gravity="center"
                         android:layout_height="25dp"
-                        android:src="@drawable/apple"/>
+                        android:src="@drawable/juice_t"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="J"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:layout_marginLeft="3dp"/>
                 </androidx.cardview.widget.CardView>
                 <androidx.cardview.widget.CardView
                     android:id="@+id/c_K"
@@ -302,7 +310,15 @@
                         android:layout_width="25dp"
                         android:layout_gravity="center"
                         android:layout_height="25dp"
-                        android:src="@drawable/apple"/>
+                        android:src="@drawable/king"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="K"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:layout_marginLeft="3dp"/>
                 </androidx.cardview.widget.CardView>
                 <androidx.cardview.widget.CardView
                     android:id="@+id/c_L"
@@ -318,7 +334,15 @@
                         android:layout_width="25dp"
                         android:layout_gravity="center"
                         android:layout_height="25dp"
-                        android:src="@drawable/apple"/>
+                        android:src="@drawable/lion_t"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="L"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:layout_marginLeft="3dp"/>
                 </androidx.cardview.widget.CardView>
                 <androidx.cardview.widget.CardView
                     android:id="@+id/c_M"
@@ -334,7 +358,16 @@
                         android:layout_width="25dp"
                         android:layout_gravity="center"
                         android:layout_height="25dp"
-                        android:src="@drawable/apple"/>
+                        android:src="@drawable/mango"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="M"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:layout_marginLeft="3dp"/>
+
                 </androidx.cardview.widget.CardView>
                 <androidx.cardview.widget.CardView
                     android:id="@+id/c_N"
@@ -350,7 +383,15 @@
                         android:layout_width="25dp"
                         android:layout_gravity="center"
                         android:layout_height="25dp"
-                        android:src="@drawable/apple"/>
+                        android:src="@drawable/nest"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="N"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:layout_marginLeft="3dp"/>
                 </androidx.cardview.widget.CardView>
                 <androidx.cardview.widget.CardView
                     android:id="@+id/c_O"
@@ -363,10 +404,19 @@
                     android:layout_margin="10dp"
                     android:backgroundTint="@color/background_Main">
                     <ImageView
-                        android:layout_width="25dp"
+                        android:layout_width="30dp"
                         android:layout_gravity="center"
-                        android:layout_height="25dp"
-                        android:src="@drawable/apple"/>
+                        android:layout_height="30dp"
+                        android:src="@drawable/orange_t"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="O"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:layout_marginLeft="3dp"/>
+
                 </androidx.cardview.widget.CardView>
                 <androidx.cardview.widget.CardView
                     android:id="@+id/c_P"
@@ -382,7 +432,15 @@
                         android:layout_width="25dp"
                         android:layout_gravity="center"
                         android:layout_height="25dp"
-                        android:src="@drawable/apple"/>
+                        android:src="@drawable/pineapple_copy"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="P"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:layout_marginLeft="3dp"/>
                 </androidx.cardview.widget.CardView>
                 <androidx.cardview.widget.CardView
                     android:id="@+id/c_Q"
@@ -398,7 +456,15 @@
                         android:layout_width="25dp"
                         android:layout_gravity="center"
                         android:layout_height="25dp"
-                        android:src="@drawable/apple"/>
+                        android:src="@drawable/queen"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Q"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:layout_marginLeft="3dp"/>
                 </androidx.cardview.widget.CardView>
                 <androidx.cardview.widget.CardView
                     android:id="@+id/c_R"
@@ -414,7 +480,15 @@
                         android:layout_width="25dp"
                         android:layout_gravity="center"
                         android:layout_height="25dp"
-                        android:src="@drawable/apple"/>
+                        android:src="@drawable/rocket"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="R"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:layout_marginLeft="3dp"/>
                 </androidx.cardview.widget.CardView>
                 <androidx.cardview.widget.CardView
                     android:id="@+id/c_S"
@@ -430,7 +504,15 @@
                         android:layout_width="25dp"
                         android:layout_gravity="center"
                         android:layout_height="25dp"
-                        android:src="@drawable/apple"/>
+                        android:src="@drawable/snake"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="S"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:layout_marginLeft="3dp"/>
                 </androidx.cardview.widget.CardView>
                 <androidx.cardview.widget.CardView
                     android:id="@+id/c_T"
@@ -446,7 +528,15 @@
                         android:layout_width="25dp"
                         android:layout_gravity="center"
                         android:layout_height="25dp"
-                        android:src="@drawable/apple"/>
+                        android:src="@drawable/tshirt_t"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="T"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:layout_marginLeft="3dp"/>
                 </androidx.cardview.widget.CardView>
                 <androidx.cardview.widget.CardView
                     android:id="@+id/c_U"
@@ -462,7 +552,15 @@
                         android:layout_width="25dp"
                         android:layout_gravity="center"
                         android:layout_height="25dp"
-                        android:src="@drawable/apple"/>
+                        android:src="@drawable/umbrella_copy"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="U"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:layout_marginLeft="3dp"/>
                 </androidx.cardview.widget.CardView>
                 <androidx.cardview.widget.CardView
                     android:id="@+id/c_V"
@@ -478,7 +576,15 @@
                         android:layout_width="25dp"
                         android:layout_gravity="center"
                         android:layout_height="25dp"
-                        android:src="@drawable/apple"/>
+                        android:src="@drawable/violincolor_p"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="V"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:layout_marginLeft="3dp"/>
                 </androidx.cardview.widget.CardView>
                 <androidx.cardview.widget.CardView
                     android:id="@+id/c_W"
@@ -494,7 +600,15 @@
                         android:layout_width="25dp"
                         android:layout_gravity="center"
                         android:layout_height="25dp"
-                        android:src="@drawable/apple"/>
+                        android:src="@drawable/well_t"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="W"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:layout_marginLeft="3dp"/>
                 </androidx.cardview.widget.CardView>
                 <androidx.cardview.widget.CardView
                     android:id="@+id/c_X"
@@ -510,7 +624,15 @@
                         android:layout_width="25dp"
                         android:layout_gravity="center"
                         android:layout_height="25dp"
-                        android:src="@drawable/apple"/>
+                        android:src="@drawable/xylo"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="X"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:layout_marginLeft="3dp"/>
                 </androidx.cardview.widget.CardView>
                 <androidx.cardview.widget.CardView
                     android:id="@+id/c_Y"
@@ -527,7 +649,15 @@
                         android:layout_width="25dp"
                         android:layout_gravity="center"
                         android:layout_height="25dp"
-                        android:src="@drawable/apple"/>
+                        android:src="@drawable/yoyo_t"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Y"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:layout_marginLeft="3dp"/>
                 </androidx.cardview.widget.CardView>
                 <androidx.cardview.widget.CardView
                     android:id="@+id/c_Z"
@@ -544,7 +674,16 @@
                         android:layout_width="25dp"
                         android:layout_gravity="center"
                         android:layout_height="25dp"
-                        android:src="@drawable/apple"/>
+                        android:src="@drawable/zabra"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Z"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:layout_marginLeft="3dp"/>
+
                 </androidx.cardview.widget.CardView>
 
 
@@ -556,8 +695,23 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
             android:backgroundTint="@color/white"
+            android:layout_marginRight="10dp"
             android:layout_marginTop="660dp"
-            />
+            android:id="@+id/f_switch"
+            >
+
+        </com.google.android.material.floatingactionbutton.FloatingActionButton>
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Default mode"
+            android:textAlignment="center"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/background_Main"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/f_state"
+            android:layout_marginLeft="10dp"/>
+
     </RelativeLayout>
 
 </ScrollView>

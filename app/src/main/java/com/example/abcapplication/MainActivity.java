@@ -43,5 +43,9 @@ public class MainActivity extends AppCompatActivity {
             Intent newScreen = new Intent(getApplicationContext(),ABCSection.class);
             startActivity(newScreen);
         });
+        Settings.setOnClickListener(v -> {
+            Intent newScreen = new Intent(getApplicationContext(),settingActivity.class);
+            startActivity(newScreen);
+        });
     }
 }
