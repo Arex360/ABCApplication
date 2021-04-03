@@ -5,6 +5,8 @@ import androidx.cardview.widget.CardView;
 
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 
 import java.util.Locale;
 
@@ -16,6 +18,8 @@ public class ABCSection extends AppCompatActivity {
     public enum mode {
         defaultMode,QuizGame
     }
+    private CardView A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,rR,S,T,U,V,W,X,Y,Z;
+    private Animation animation;
     private TextToSpeech tts = null;
     private Options correctOption;
     private Options choosedOption;
@@ -23,6 +27,7 @@ public class ABCSection extends AppCompatActivity {
     private void nextQuestion(){
 
     }
+
     private void speak(String s){
         tts.setPitch(1);
         tts.setSpeechRate(1);
@@ -30,8 +35,9 @@ public class ABCSection extends AppCompatActivity {
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        animation = AnimationUtils.loadAnimation(this,R.anim.anim_1);
         gameMode = mode.defaultMode;
-        CardView A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,rR,S,T,U,V,W,X,Y,Z;
+
         getWindow().setFlags(1024,1024);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_a_b_c_section);
@@ -64,7 +70,7 @@ public class ABCSection extends AppCompatActivity {
         X = findViewById(R.id.c_X);
         Y = findViewById(R.id.c_Y);
         Z = findViewById(R.id.c_Z);
-
+        Animate();
         tts = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int status) {
@@ -428,7 +434,34 @@ public class ABCSection extends AppCompatActivity {
 
 
     }
-
+    private  void Animate(){
+        A.setAnimation(animation);
+        B.setAnimation(animation);
+        C.setAnimation(animation);
+        D.setAnimation(animation);
+        E.setAnimation(animation);
+        F.setAnimation(animation);
+        G.setAnimation(animation);
+        H.setAnimation(animation);
+        I.setAnimation(animation);
+        J.setAnimation(animation);
+        K.setAnimation(animation);
+        L.setAnimation(animation);
+        M.setAnimation(animation);
+        N.setAnimation(animation);
+        O.setAnimation(animation);
+        P.setAnimation(animation);
+        Q.setAnimation(animation);
+        rR.setAnimation(animation);
+        S.setAnimation(animation);
+        T.setAnimation(animation);
+        U.setAnimation(animation);
+        V.setAnimation(animation);
+        W.setAnimation(animation);
+        X.setAnimation(animation);
+        Y.setAnimation(animation);
+        Z.setAnimation(animation);
+    }
     @Override
     protected void onDestroy() {
         if(tts != null){
