@@ -301,7 +301,7 @@ public class ABCSection extends AppCompatActivity {
             }
         });
         M.setOnClickListener(v -> {
-            ChangeColor(L);
+            ChangeColor(M);
             if(gameMode == mode.defaultMode){
                 speak("M for Mango");
             }else{
