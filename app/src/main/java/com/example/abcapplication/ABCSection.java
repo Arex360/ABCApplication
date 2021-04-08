@@ -20,11 +20,10 @@ import java.util.ArrayList;
 import java.util.Locale;
 
 public class ABCSection extends AppCompatActivity {
-
-
     public enum mode {
         defaultMode,QuizGame
     }
+    //region Data Members
     private CardView A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,rR,S,T,U,V,W,X,Y,Z;
     private Animation animation;
     private TextToSpeech tts = null;
@@ -35,6 +34,7 @@ public class ABCSection extends AppCompatActivity {
     private boolean isDefault;
     private ArrayList<Questions> questions;
     private int questionIndex;
+    //endregion
     private int getRandomNumber(int min, int max) {
         return (int) ((Math.random() * (max - min)) + min);
     }
@@ -48,7 +48,6 @@ public class ABCSection extends AppCompatActivity {
         }else{
             this.speak("Good job");
         }
-
     }
     private void Init(){
         isDefault = true;
@@ -66,7 +65,6 @@ public class ABCSection extends AppCompatActivity {
     }
     @SuppressLint("ResourceAsColor")
     private void ChangeColor(CardView card){
-        CardView newCard = card;
         Drawable background = card.getBackground();
         card.getBackground().setTint(R.color.background_Main);
         new Handler().postDelayed(new Runnable() {
@@ -87,7 +85,7 @@ public class ABCSection extends AppCompatActivity {
         Init();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_a_b_c_section);
-
+        //region Initialization
         A = findViewById(R.id.c_A);
         B = findViewById(R.id.c_B);
         C = findViewById(R.id.c_C);
@@ -116,7 +114,7 @@ public class ABCSection extends AppCompatActivity {
         X = findViewById(R.id.c_X);
         Y = findViewById(R.id.c_Y);
         Z = findViewById(R.id.c_Z);
-
+        //endregion
         extendedFloatingActionButton = findViewById(R.id.f_state);
         Animate();
         tts = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
@@ -127,6 +125,7 @@ public class ABCSection extends AppCompatActivity {
                 }
             }
         });
+        //region Click Events
         A.setOnClickListener(v -> {
             ChangeColor(A);
             if(gameMode == mode.defaultMode){
@@ -508,13 +507,7 @@ public class ABCSection extends AppCompatActivity {
                  extendedFloatingActionButton.setText("Default mode");
              }
          });
-
-
-
-
-
-
-
+        //endregion
 
 
     }

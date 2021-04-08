@@ -1,7 +1,5 @@
 package com.example.abcapplication;
 
-import android.provider.CalendarContract;
-
 public class Data {
     public static float pitch = (float) 1;
     public static float speed = (float) 0.9;
