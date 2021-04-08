@@ -3,41 +3,70 @@ package com.example.abcapplication;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.annotation.SuppressLint;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.speech.tts.TextToSpeech;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.util.ArrayList;
 import java.util.Locale;
 
 public class ABCSection extends AppCompatActivity {
 
-    public enum Options {
-        A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z
-    }
+
     public enum mode {
         defaultMode,QuizGame
     }
     private CardView A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,rR,S,T,U,V,W,X,Y,Z;
     private Animation animation;
     private TextToSpeech tts = null;
-    private Options correctOption;
-    private Options choosedOption;
+    private Data.Options correctOption;
+    private Data.Options choosedOption;
     private  mode gameMode;
     private ExtendedFloatingActionButton extendedFloatingActionButton;
     private FloatingActionButton floatingActionButton;
     private boolean isDefault;
+    private ArrayList<Questions> questions;
+    private int questionIndex;
     private void nextQuestion(){
+        Questions question = questions.get(this.questionIndex);
+        this.speak(question.question);
+        correctOption = question.answer;
+        questions.remove(question);
 
     }
     private void Init(){
+        questionIndex = 0;
+        questions = new ArrayList<Questions>();
         animation = AnimationUtils.loadAnimation(this,R.anim.anim_1);
         gameMode = mode.defaultMode;
         isDefault = true;
         getWindow().setFlags(1024,1024);
+        int index = 0;
+        for(String str: Data.questions){
+            questions.add(new Questions("Where is "+ str,Data.answers[index]));
+            index++;
+        }
+    }
+    @SuppressLint("ResourceAsColor")
+    private void ChangeColor(CardView card){
+        CardView newCard = card;
+        Drawable background = card.getBackground();
+        card.getBackground().setTint(R.color.background_Main);
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                card.getBackground().setTint(Color.rgb(252, 186, 3));
+            }
+        },1000);
     }
     private void speak(String s){
         tts.setPitch(Data.pitch);
@@ -91,10 +120,11 @@ public class ABCSection extends AppCompatActivity {
             }
         });
         A.setOnClickListener(v -> {
+            ChangeColor(A);
             if(gameMode == mode.defaultMode){
                 speak("A for Apple");
             }else{
-                choosedOption = Options.A;
+                choosedOption = Data.Options.A;
                 if(choosedOption == correctOption){
                     speak("Its correct Answer, Good Job");
                     nextQuestion();
@@ -105,10 +135,11 @@ public class ABCSection extends AppCompatActivity {
 
         });
         B.setOnClickListener(v -> {
+            ChangeColor(B);
             if(gameMode == mode.defaultMode) {
                 speak("B for Ball");
             }else{
-                choosedOption = Options.B;
+                choosedOption = Data.Options.B;
                 if(choosedOption == correctOption){
                     speak("Its correct Answer, Good Job");
                     nextQuestion();
@@ -118,10 +149,11 @@ public class ABCSection extends AppCompatActivity {
             }
         });
         C.setOnClickListener(v -> {
+            ChangeColor(C);
             if(gameMode == mode.defaultMode){
                 speak("C for Cat");
             }else{
-                choosedOption = Options.C;
+                choosedOption = Data.Options.C;
                 if(choosedOption == correctOption){
                     speak("Its correct Answer, Good Job");
                     nextQuestion();
@@ -132,10 +164,11 @@ public class ABCSection extends AppCompatActivity {
 
         });
         D.setOnClickListener(v -> {
+            ChangeColor(D);
             if(gameMode == mode.defaultMode){
                 speak("D for Dog");
             }else{
-                choosedOption = Options.D;
+                choosedOption = Data.Options.D;
                 if(choosedOption == correctOption){
                     speak("Its correct Answer, Good Job");
                     nextQuestion();
@@ -145,10 +178,11 @@ public class ABCSection extends AppCompatActivity {
             }
         });
         E.setOnClickListener(v -> {
+            ChangeColor(E);
             if(gameMode == mode.defaultMode){
                 speak("E for Egg");
             }else{
-                choosedOption = Options.E;
+                choosedOption = Data.Options.E;
                 if(choosedOption == correctOption){
                     speak("Its correct Answer, Good Job");
                     nextQuestion();
@@ -159,10 +193,11 @@ public class ABCSection extends AppCompatActivity {
         });
 
         F.setOnClickListener(v -> {
+            ChangeColor(F);
             if(gameMode == mode.defaultMode){
                 speak("F for Fan");
             }else{
-                choosedOption = Options.F;
+                choosedOption = Data.Options.F;
                 if(choosedOption == correctOption){
                     speak("Its correct Answer, Good Job");
                     nextQuestion();
@@ -173,10 +208,11 @@ public class ABCSection extends AppCompatActivity {
 
         });
         G.setOnClickListener(v -> {
+            ChangeColor(G);
             if(gameMode == mode.defaultMode){
                 speak("G for Goose");
             }else{
-                choosedOption = Options.A;
+                choosedOption =Data.Options.G;
                 if(choosedOption == correctOption){
                     speak("Its correct Answer, Good Job");
                     nextQuestion();
@@ -187,10 +223,11 @@ public class ABCSection extends AppCompatActivity {
 
         });
         H.setOnClickListener(v -> {
+            ChangeColor(H);
             if(gameMode == mode.defaultMode){
                 speak("H for Horse");
             }else{
-                choosedOption = Options.H;
+                choosedOption = Data.Options.H;
                 if(choosedOption == correctOption){
                     speak("Its correct Answer, Good Job");
                     nextQuestion();
@@ -200,10 +237,11 @@ public class ABCSection extends AppCompatActivity {
             }
         });
         I.setOnClickListener(v -> {
+            ChangeColor(I);
             if(gameMode == mode.defaultMode){
                 speak("I for Ice Cream");
             }else{
-                choosedOption = Options.I;
+                choosedOption = Data.Options.I;
                 if(choosedOption == correctOption){
                     speak("Its correct Answer, Good Job");
                     nextQuestion();
@@ -213,10 +251,11 @@ public class ABCSection extends AppCompatActivity {
             }
         });
         J.setOnClickListener(v -> {
+            ChangeColor(J);
             if(gameMode == mode.defaultMode){
                 speak("J for juice");
             }else{
-                choosedOption = Options.J;
+                choosedOption = Data.Options.J;
                 if(choosedOption == correctOption){
                     speak("Its correct Answer, Good Job");
                     nextQuestion();
@@ -229,7 +268,7 @@ public class ABCSection extends AppCompatActivity {
             if(gameMode == mode.defaultMode){
                 speak("K for King");
             }else{
-                choosedOption = Options.K;
+                choosedOption = Data.Options.K;
                 if(choosedOption == correctOption){
                     speak("Its correct Answer, Good Job");
                     nextQuestion();
@@ -242,7 +281,7 @@ public class ABCSection extends AppCompatActivity {
             if(gameMode == mode.defaultMode){
                 speak("L for Lion");
             }else{
-                choosedOption = Options.L;
+                choosedOption = Data.Options.L;
                 if(choosedOption == correctOption){
                     speak("Its correct Answer, Good Job");
                     nextQuestion();
@@ -255,7 +294,7 @@ public class ABCSection extends AppCompatActivity {
             if(gameMode == mode.defaultMode){
                 speak("M for Mango");
             }else{
-                choosedOption = Options.M;
+                choosedOption = Data.Options.M;
                 if(choosedOption == correctOption){
                     speak("Its correct Answer, Good Job");
                     nextQuestion();
@@ -269,7 +308,7 @@ public class ABCSection extends AppCompatActivity {
             if(gameMode == mode.defaultMode){
                 speak("N for Nest");
             }else{
-                choosedOption = Options.N;
+                choosedOption = Data.Options.N;
                 if(choosedOption == correctOption){
                     speak("Its correct Answer, Good Job");
                     nextQuestion();
@@ -282,7 +321,7 @@ public class ABCSection extends AppCompatActivity {
             if(gameMode == mode.defaultMode){
                 speak("O for Orange");
             }else{
-                choosedOption = Options.O;
+                choosedOption = Data.Options.O;
                 if(choosedOption == correctOption){
                     speak("Its correct Answer, Good Job");
                     nextQuestion();
@@ -295,7 +334,7 @@ public class ABCSection extends AppCompatActivity {
             if(gameMode == mode.defaultMode){
                 speak("P for PineApple");
             }else{
-                choosedOption = Options.P;
+                choosedOption = Data.Options.P;
                 if(choosedOption == correctOption){
                     speak("Its correct Answer, Good Job");
                     nextQuestion();
@@ -308,7 +347,7 @@ public class ABCSection extends AppCompatActivity {
             if(gameMode == mode.defaultMode){
                 speak("Q for Queen");
             }else{
-                choosedOption = Options.Q;
+                choosedOption = Data.Options.Q;
                 if(choosedOption == correctOption){
                     speak("Its correct Answer, Good Job");
                     nextQuestion();
@@ -321,7 +360,7 @@ public class ABCSection extends AppCompatActivity {
             if(gameMode == mode.defaultMode){
                 speak("R for Rocket");
             }else{
-                choosedOption = Options.R;
+                choosedOption = Data.Options.R;
                 if(choosedOption == correctOption){
                     speak("Its correct Answer, Good Job");
                     nextQuestion();
@@ -334,7 +373,7 @@ public class ABCSection extends AppCompatActivity {
             if(gameMode == mode.defaultMode){
                 speak("S for Snake");
             }else{
-                choosedOption = Options.S;
+                choosedOption = Data.Options.S;
                 if(choosedOption == correctOption){
                     speak("Its correct Answer, Good Job");
                     nextQuestion();
@@ -347,7 +386,7 @@ public class ABCSection extends AppCompatActivity {
             if(gameMode == mode.defaultMode){
                 speak("T for T Shirt");
             }else{
-                choosedOption = Options.T;
+                choosedOption = Data.Options.T;
                 if(choosedOption == correctOption){
                     speak("Its correct Answer, Good Job");
                     nextQuestion();
@@ -360,7 +399,7 @@ public class ABCSection extends AppCompatActivity {
             if(gameMode == mode.defaultMode){
                 speak("U for Umbrella");
             }else{
-                choosedOption = Options.U;
+                choosedOption = Data.Options.U;
                 if(choosedOption == correctOption){
                     speak("Its correct Answer, Good Job");
                     nextQuestion();
@@ -370,10 +409,11 @@ public class ABCSection extends AppCompatActivity {
             }
         });
         V.setOnClickListener(v -> {
+
             if(gameMode == mode.defaultMode){
                 speak("V for violin");
             }else{
-                choosedOption = Options.V;
+                choosedOption = Data.Options.V;
                 if(choosedOption == correctOption){
                     speak("Its correct Answer, Good Job");
                     nextQuestion();
@@ -386,7 +426,7 @@ public class ABCSection extends AppCompatActivity {
             if(gameMode == mode.defaultMode){
                 speak("W for Well");
             }else{
-                choosedOption = Options.W;
+                choosedOption = Data.Options.W;
                 if(choosedOption == correctOption){
                     speak("Its correct Answer, Good Job");
                     nextQuestion();
@@ -399,7 +439,7 @@ public class ABCSection extends AppCompatActivity {
             if(gameMode == mode.defaultMode){
                 speak("X for Xylophone");
             }else{
-                choosedOption = Options.X;
+                choosedOption = Data.Options.X;
                 if(choosedOption == correctOption){
                     speak("Its correct Answer, Good Job");
                     nextQuestion();
@@ -412,7 +452,7 @@ public class ABCSection extends AppCompatActivity {
             if(gameMode == mode.defaultMode){
                 speak("Y for Yoyo");
             }else{
-                choosedOption = Options.Y;
+                choosedOption = Data.Options.Y;
                 if(choosedOption == correctOption){
                     speak("Its correct Answer, Good Job");
                     nextQuestion();
@@ -424,8 +464,8 @@ public class ABCSection extends AppCompatActivity {
         Z.setOnClickListener(v -> {
             if(gameMode == mode.defaultMode){
                 speak("Z for Zebra");
-            }else{
-                choosedOption = Options.Z;
+            }else if(gameMode == mode.QuizGame){
+                choosedOption = Data.Options.Z;
                 if(choosedOption == correctOption){
                     speak("Its correct Answer, Good Job");
                     nextQuestion();
@@ -437,8 +477,11 @@ public class ABCSection extends AppCompatActivity {
          floatingActionButton.setOnClickListener(v -> {
              isDefault = !isDefault;
              if(isDefault){
+                 gameMode = mode.QuizGame;
                  extendedFloatingActionButton.setText("Quiz mode");
+                 nextQuestion();
              }else{
+                 gameMode = mode.defaultMode;
                  extendedFloatingActionButton.setText("Default mode");
              }
          });
@@ -452,6 +495,9 @@ public class ABCSection extends AppCompatActivity {
 
 
     }
+
+    
+
     private  void Animate(){
         A.setAnimation(animation);
         B.setAnimation(animation);
