@@ -32,18 +32,26 @@ public class ABCSection extends AppCompatActivity {
     private Data.Options choosedOption;
     private  mode gameMode;
     private ExtendedFloatingActionButton extendedFloatingActionButton;
-    private FloatingActionButton floatingActionButton;
     private boolean isDefault;
     private ArrayList<Questions> questions;
     private int questionIndex;
+    private int getRandomNumber(int min, int max) {
+        return (int) ((Math.random() * (max - min)) + min);
+    }
     private void nextQuestion(){
-        Questions question = questions.get(this.questionIndex);
-        this.speak(question.question);
-        correctOption = question.answer;
-        questions.remove(question);
+        if(questions.size() > 0){
+            this.questionIndex = getRandomNumber(0,questions.size()-1);
+            Questions question = questions.get(this.questionIndex);
+            this.speak(question.question);
+            correctOption = question.answer;
+            questions.remove(question);
+        }else{
+            this.speak("Good job");
+        }
 
     }
     private void Init(){
+        isDefault = true;
         questionIndex = 0;
         questions = new ArrayList<Questions>();
         animation = AnimationUtils.loadAnimation(this,R.anim.anim_1);
@@ -108,7 +116,7 @@ public class ABCSection extends AppCompatActivity {
         X = findViewById(R.id.c_X);
         Y = findViewById(R.id.c_Y);
         Z = findViewById(R.id.c_Z);
-        floatingActionButton = findViewById(R.id.f_switch);
+
         extendedFloatingActionButton = findViewById(R.id.f_state);
         Animate();
         tts = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
@@ -265,6 +273,7 @@ public class ABCSection extends AppCompatActivity {
             }
         });
         K.setOnClickListener(v -> {
+            ChangeColor(K);
             if(gameMode == mode.defaultMode){
                 speak("K for King");
             }else{
@@ -278,6 +287,7 @@ public class ABCSection extends AppCompatActivity {
             }
         });
         L.setOnClickListener(v -> {
+            ChangeColor(L);
             if(gameMode == mode.defaultMode){
                 speak("L for Lion");
             }else{
@@ -291,6 +301,7 @@ public class ABCSection extends AppCompatActivity {
             }
         });
         M.setOnClickListener(v -> {
+            ChangeColor(L);
             if(gameMode == mode.defaultMode){
                 speak("M for Mango");
             }else{
@@ -305,6 +316,7 @@ public class ABCSection extends AppCompatActivity {
 
         });
         N.setOnClickListener(v -> {
+            ChangeColor(N);
             if(gameMode == mode.defaultMode){
                 speak("N for Nest");
             }else{
@@ -318,6 +330,7 @@ public class ABCSection extends AppCompatActivity {
             }
         });
         O.setOnClickListener(v -> {
+            ChangeColor(O);
             if(gameMode == mode.defaultMode){
                 speak("O for Orange");
             }else{
@@ -331,6 +344,7 @@ public class ABCSection extends AppCompatActivity {
             }
         });
         P.setOnClickListener(v -> {
+            ChangeColor(P);
             if(gameMode == mode.defaultMode){
                 speak("P for PineApple");
             }else{
@@ -344,6 +358,7 @@ public class ABCSection extends AppCompatActivity {
             }
         });
         Q.setOnClickListener(v -> {
+            ChangeColor(Q);
             if(gameMode == mode.defaultMode){
                 speak("Q for Queen");
             }else{
@@ -357,6 +372,7 @@ public class ABCSection extends AppCompatActivity {
             }
         });
         rR.setOnClickListener(v->{
+            ChangeColor(rR);
             if(gameMode == mode.defaultMode){
                 speak("R for Rocket");
             }else{
@@ -370,6 +386,7 @@ public class ABCSection extends AppCompatActivity {
             }
         });
         S.setOnClickListener(v -> {
+            ChangeColor(S);
             if(gameMode == mode.defaultMode){
                 speak("S for Snake");
             }else{
@@ -383,6 +400,7 @@ public class ABCSection extends AppCompatActivity {
             }
         });
         T.setOnClickListener(v -> {
+            ChangeColor(T);
             if(gameMode == mode.defaultMode){
                 speak("T for T Shirt");
             }else{
@@ -396,6 +414,7 @@ public class ABCSection extends AppCompatActivity {
             }
         });
         U.setOnClickListener(v -> {
+            ChangeColor(U);
             if(gameMode == mode.defaultMode){
                 speak("U for Umbrella");
             }else{
@@ -409,7 +428,7 @@ public class ABCSection extends AppCompatActivity {
             }
         });
         V.setOnClickListener(v -> {
-
+            ChangeColor(V);
             if(gameMode == mode.defaultMode){
                 speak("V for violin");
             }else{
@@ -423,6 +442,7 @@ public class ABCSection extends AppCompatActivity {
             }
         });
         W.setOnClickListener(v -> {
+            ChangeColor(W);
             if(gameMode == mode.defaultMode){
                 speak("W for Well");
             }else{
@@ -436,6 +456,7 @@ public class ABCSection extends AppCompatActivity {
             }
         });
         X.setOnClickListener(v -> {
+            ChangeColor(X);
             if(gameMode == mode.defaultMode){
                 speak("X for Xylophone");
             }else{
@@ -449,6 +470,7 @@ public class ABCSection extends AppCompatActivity {
             }
         });
         Y.setOnClickListener(v -> {
+            ChangeColor(Y);
             if(gameMode == mode.defaultMode){
                 speak("Y for Yoyo");
             }else{
@@ -462,6 +484,7 @@ public class ABCSection extends AppCompatActivity {
             }
         });
         Z.setOnClickListener(v -> {
+            ChangeColor(Z);
             if(gameMode == mode.defaultMode){
                 speak("Z for Zebra");
             }else if(gameMode == mode.QuizGame){
@@ -474,7 +497,7 @@ public class ABCSection extends AppCompatActivity {
                 }
             }
         });
-         floatingActionButton.setOnClickListener(v -> {
+         extendedFloatingActionButton.setOnClickListener(v -> {
              isDefault = !isDefault;
              if(isDefault){
                  gameMode = mode.QuizGame;
@@ -496,7 +519,7 @@ public class ABCSection extends AppCompatActivity {
 
     }
 
-    
+
 
     private  void Animate(){
         A.setAnimation(animation);

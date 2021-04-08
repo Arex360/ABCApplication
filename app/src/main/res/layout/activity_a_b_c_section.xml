@@ -690,18 +690,7 @@
 
             </com.google.android.material.circularreveal.CircularRevealGridLayout>
         </androidx.cardview.widget.CardView>
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:backgroundTint="@color/white"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="660dp"
-            android:id="@+id/f_switch"
-            >
 
-        </com.google.android.material.floatingactionbutton.FloatingActionButton>
         <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -710,6 +699,9 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/background_Main"
             android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="650dp"
             android:id="@+id/f_state"
             android:layout_marginLeft="10dp"/>
 
