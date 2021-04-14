@@ -2,52 +2,54 @@ package com.example.abcapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Locale;
 
 public class settingActivity extends AppCompatActivity {
-   private TextToSpeech engine;
+
+    private float pitchFloat,speedFloat;
+    private TextToSpeech tts;
     private void Init(){
         getWindow().setFlags(1024,1024);
-        engine = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
-            @Override
-            public void onInit(int status) {
-                engine.setLanguage(Locale.US);
-            }
-        });
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Button btn;
+        Button btn,setBtn;
         SeekBar pitchBar;
         SeekBar SpeedRate;
-        pitchBar = findViewById(R.id.pitch);
-        SpeedRate = findViewById(R.id.speed);
-
         Init();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
+        pitchBar = findViewById(R.id.pitch);
+        SpeedRate = findViewById(R.id.speed);
         btn = findViewById(R.id.testBtn);
+        setBtn = findViewById(R.id.setBtn);
         btn.setOnClickListener(v -> {
-            float pitchFloat = (float) pitchBar.getProgress() / 50;
-            float speedFloat = (float) SpeedRate.getProgress() / 50;
+
+        });
+        setBtn.setOnClickListener(v -> {
+            pitchFloat = Float.valueOf(pitchBar.getProgress());
+            speedFloat = Float.valueOf(SpeedRate.getProgress());
+            pitchFloat /= 100f;
+            speedFloat /= 100f;
             Data.pitch = pitchFloat;
             Data.speed = speedFloat;
-            engine.setPitch(pitchFloat);
-            engine.setSpeechRate(speedFloat);
-            engine.speak("this is my new voice",TextToSpeech.QUEUE_FLUSH,null);
+            Toast.makeText(getApplicationContext(),pitchFloat+"",Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+            startActivity(intent);
         });
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        engine.stop();
-        engine.shutdown();
+
     }
 }

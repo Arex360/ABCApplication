@@ -29,6 +29,15 @@ public class Data {
             "Umbrella","Violen","Well","Xylophone",
             "Yoyo","Zebra"
     };
+    public static String[] BOPquestions = {
+            "Eye","Nose","Ear","Finger",
+            "Knee","Hand","Arm","Shoulder",
+            "Foot","Tongue","Chest","Mouth",
+            "Teeth","Hair","Neck","Shoulder",
+            "Toe","Chin","Elbow","Heart",
+            "Kidney","Liver","Eye Brows","Brain"
+    };
+
     public static String[] colors = {
             "#fcba03",
             "#fc6203"
